@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- <h1 class="btnStyle">hello</h1> -->
+    <style>
+      .btnStyle {
+        height: 60px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        background: gray;
+        color: white;
+      }
+    </style>
+    <script>
+      const buttonsArr = [1, 2, 3, 4, 5, 6];
+      const button = document.createElement('button');
+
+      buttonsArr.map((content, indice) => {
+        return document.write(
+          `<button class='btnStyle' onClick='handleBtn(${indice})'>${content}</button>`
+        );
+      });
+
+      const renderedArray = document.querySelectorAll('.btnStyle');
+
+      const handleBtn = (item, outro) => {
+        renderedArray.forEach((value, indice) => {
+          if (item != indice) {
+            renderedArray[item].style.background = 'blue';
+          }
+        });
+      };
+      console.log(renderedArray);
+    </script>
+  </body>
+</html>
